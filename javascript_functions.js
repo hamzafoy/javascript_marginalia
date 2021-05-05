@@ -86,7 +86,17 @@ const arrowCalcVolume = (length, width, height) => {
 
 
 //Concise Body Arrow Function
-""
+/*                         11                              */
+/*
+let nameOfFunction = () => {};
+let nameOfFunction = firstParameter => {};
+let nameOfFunction = (firstParameter, secondParameter) => {};
+*/
+const squared = (num) => {
+    return num * num;
+};
+/*                12                 */
+const conciseSquared = num => num * num;
 
 
 
@@ -104,3 +114,5 @@ const arrowCalcVolume = (length, width, height) => {
 // 8. HELPER FUNCTIONS: The use of return value of a function inside another function allow for tasks to be broken up, easier to read & debug, and are known as helper functions.
 // 9. FUNCTION EXPRESSION: A function expression is usually stored in a variable to be referred to in codebase. Function expressions usually contain no name after the function keyword.
 // 10. ARROW FUNCTIONS: ES6 introduced 'arrow function syntax' allowing a shorthand to write anonymous functions.
+// 11. CONCISE BODY ARROW FUNCTIONS: You can refactor arrow functions. Functions that take a single parameter do not need to be enclosed in round brackets/parentheses.
+// 12. CONCISE BODY ARROW FUNCTIONS (cont'd): You can even refactor arrow functions with a single line, omit the return statement, as this is an implicit return.
