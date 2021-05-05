@@ -3,6 +3,7 @@
 -------------------------------------- */
 
 //Basic Function Declaration
+//Please note, the function declaration is hoisted. A function declaration can be called in lines BEFORE its declaration.
  /* 1 */ /* 2 */
 function greet() {
     console.log('Hello!'); /* 3 */
@@ -63,6 +64,32 @@ console.log(farToKelvTwo(78));
 
 
 
+/*----------------------------------
+~~~| What is a FUNCTION EXPRESSION? |~~~
+------------------------------------- */
+
+//Basic Function Expression
+//Please note, the function expression is NOT hoisted. A function expression cannot be called in lines BEFORE it is defined.
+/*                      9                         */
+const calcVolume = function(length, width, height) {
+    const volume = length * width * height;
+    return volume;
+}
+
+
+//Arrow Functions
+/*                     10                         */
+const arrowCalcVolume = (length, width, height) => {
+    const volume = length * width * height;
+    return volume;
+}
+
+
+//Concise Body Arrow Function
+
+
+
+
 /*---------
 ~~~| INDEX |~~~
 ------------ */
@@ -75,3 +102,5 @@ console.log(farToKelvTwo(78));
 // 6. DEFAULT PARAMETER(S): ES6 introduces the ability to set predetermined values for parameters that will be used if an argument is not passed to a called function.
 // 7. RETURN STATEMENT: The return statement ensures a function produces an output. Upon the use of a return statement, the execution of the rest of the function is stopped and the code that follows is not executed.
 // 8. HELPER FUNCTIONS: The use of return value of a function inside another function allow for tasks to be broken up, easier to read & debug, and are known as helper functions.
+// 9. FUNCTION EXPRESSION: A function expression is usually stored in a variable to be referred to in codebase. Function expressions usually contain no name after the function keyword.
+// 10. ARROW FUNCTIONS: ES6 introduced 'arrow function syntax' allowing a shorthand to write anonymous functions.
