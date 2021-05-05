@@ -4,6 +4,7 @@
 
 // Variables defined outside of specified code blocks are in the global scopes & often called global variables.
 // Since global variables are not bound inside a specified code block, they can be accessed by any code in the program including code in specified code blocks.
+// Declared global variables go to the 'global namespace' which allows these variables to be accessible from anywhere in the program.
 
 //EXAMPLE
 
@@ -38,3 +39,4 @@ returnFavoriteMovie();
 ------------ */
 
 // * Scope is the context in which variables are declared. Variables can exist either outside or inside specified code blocks {} such as belonging to variables, functions, or if statements.
+// * Be careful and try to keep variables needed throughout the program in the local scope. Do not reuse variables across different scopes.
