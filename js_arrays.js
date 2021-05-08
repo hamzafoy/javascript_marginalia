@@ -8,6 +8,8 @@
 //Basic Array Literal
 /*                   1                  */
 const listOfItems = [false, 'Warring States Period', 1.2567, true, 'Gravy', 1012];
+const listOfItemsTwo = [undefined, 9.212, 'Tajweed'];
+const listOfNums = [2.24015, 39, 57.565, 99.99991];
 
 
 //Accessing an element in an array with its index. Use 'bracket notation' containing the index after the variable identifier to access said element.
@@ -30,28 +32,56 @@ console.log(listOfItems.length); //EXPECTED OUTPUT is 6.
            /*          4          */
 listOfItems.push('Rome: Total War'); //Note that `.push()` "mutates" the initial array, changing the array from its initial state.
 console.log(listOfItems); //EXPECTED OUTPUT: The array elements will have 'Rome: Total War' at the end.
+
            /* 5 */
 listOfItems.pop();
 let poppedItem = listOfItems.pop();
 console.log(poppedItem); //EXPECTED OUTPUT is 1012.
+
            /*  6  */
 listOfItems.forEach(
     function(item, index) {
         console.log(item, index); //EXPECTED OUT is each array element's value and index in the array.
     }
 );
+
            /*  7  */
 listOfItems.shift();
+
            /*      8       */
 listOfItems.unshift(8.72134);
+
                           /*         9        */
 let position = listOfItems.indexOf('Spaghetti'); //The returned index can be stored in a variable.
 console.log(position); //EXPECTED OUTPUT is 1
+
            /*          10         */
 listOfItems.splice(1, 1, 'Lasagna');
-console.log(listOfItems); //EXPECTED OUT is [8.72134, 'Lasagna', 1.2567, true, 'Gravy']
+console.log(listOfItems); //EXPECTED OUTPUT is [8.72134, 'Lasagna', 1.2567, true, 'Gravy']
+
                        /*   11    */
-console.log(listOfItems.slice(1,3));
+console.log(listOfItems.slice(1,3)); //EXPECTED OUTPUT is ['Lasagna', 1.2567]
+
+                                    /*         12        */
+const longListOfItems = listOfItems.concat(listOfItemsTwo);
+console.log(longListOfItems); //EXPECTED OUTPUT is [8.72134, 'Lasagna', 1.2567, true, 'Gravy', undefined, 9.212, 'Tajweed']
+
+function everyTest(value, index, array) {
+    return value < 101;
+};
+                      /*      13       */
+console.log(listOfNums.every(everyTest)); //EXPECTED OUTPUT is true
+
+let filterFilter = value => value > 50;
+                                 /*        14        */
+let filteredByFilter = listOfNums.filter(filterFilter);
+console.log(filteredByFilter); //EXPECTED OUTPUT is [57.565, 99.99991]
+
+                      /*        15       */
+console.log(listOfNums.find(filterFilter)); //EXPECTED OUTPUT is 57.565
+
+/* */
+
 
 
 
@@ -72,3 +102,8 @@ console.log(listOfItems.slice(1,3));
 //NOTE for SPLICE METHOD: The `.splice()` can take 1 or 2 args only, which will result in removing a number of elements from the array which `.splice()` is applied. Read MDN documents for further detail.
 //11. SLICE METHOD: The `.slice()` method can take 1 or 2 args. The 1st arg indicates which index to start slicing and returning a copy of the original array.
 //NOTE FOR SLICE METHOD: The 2nd arg indicates where to stop slicing. This method DOES NOT alter the original array that the method is executed on.
+//12. CONCAT METHOD: The `.concat()` method takes 1 arg which is the 2nd array that you want to merge with the array the method is called on.
+//NOTE FOR CONCAT METHOD: This method doesn't alter the array that `.concat()` is called on nor the array used as an argument. This method creates a 3rd new & merged array.
+//13. EVERY METHOD: The `.every()` method returns a Boolean value depending on whether every element of the array passes the test provided by the function passed through the method.
+//14. FILTER METHOD: The `.filter()` method CREATES a new array with elements which pass test(s) implemented by the function passed to the `.filter()` method.
+//15. FIND METHOD: The `.find()` method returns the FIRST value that passes the test in the function passed to the `.find()` method.
