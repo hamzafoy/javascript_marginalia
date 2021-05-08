@@ -99,6 +99,24 @@ const squared = (num) => {
 const conciseSquared = num => num * num;
 
 
+//Higher Order Functions
+const timesThree = integer => integer * 3;
+const checkTheOutput = (func, val) => {
+    let firstTest = func(val);
+    let secondTest = func(val);
+    if (firstTest === secondTest) {
+        console.log(`The values ${firstTest} and ${secondTest} match and are consistent!`)
+    } else {
+        console.log('These are inconsistent results!');
+    }
+}
+//Higher Order Functions can be a function that either accepts other functions as parameters, returns a function, or both.
+//The functions that get passed into another function as a parameter are called 'callback functions'.
+//The above example function `checkTheOutput` is checking to see if results of functions are outputting consistent same values.
+//Functions are first class objects in that they also have methods, properties, and can be saved to variables. Functions are important for abstraction.
+checkTheOutput(timesThree, 6);
+
+
 
 /*---------
 ~~~| INDEX |~~~
