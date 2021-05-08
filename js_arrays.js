@@ -16,6 +16,10 @@ const listOfNums = [2.24015, 39, 57.565, 99.99991];
             /*      2     */
 console.log(listOfItems[1]); //EXPECTED OUTPUT is 'Warring States Period'.
 
+//Accessing elements in nested arrays. Chain bracket notations to dive deeper into array structures.
+const nestedLists = [[1,2], [3,4], [5,6]];
+console.log(nestedLists[0][1]); //EXPECTED OUTPUT is 2
+
 
 //Updating the value of an element inside the array using 'bracket notation'.
 listOfItems[1] = 'Spaghetti';
@@ -117,3 +121,4 @@ console.log([3, 12, 21].reduce(reducedVinegar)); //EXPECTED OUTPUT is 36
 //16. INCLUDES METHOD: The `.includes()` method accepts 1 arg which is a value you want to test whether it is in the array or not. Returns a Boolean value depending on result.
 //17. MAP METHOD: The `.map()` method CREATES a new array populated with new elements which would be the results of the function passed to the `.map()` method executed on each element.
 //18. REDUCE METHOD: The `.reduce()` method executes functions towards 'reducing' the elements of an array to a single outputted value.
+//NOTE FOR FUNCTIONS MUTATING ARRAYS: When arrays are mutated inside a function, the change will be maintained outside the function as well.
