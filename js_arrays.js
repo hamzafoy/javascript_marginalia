@@ -50,6 +50,8 @@ console.log(position); //EXPECTED OUTPUT is 1
            /*          10         */
 listOfItems.splice(1, 1, 'Lasagna');
 console.log(listOfItems); //EXPECTED OUT is [8.72134, 'Lasagna', 1.2567, true, 'Gravy']
+                       /*   11    */
+console.log(listOfItems.slice(1,3));
 
 
 
@@ -68,3 +70,5 @@ console.log(listOfItems); //EXPECTED OUT is [8.72134, 'Lasagna', 1.2567, true, '
 //9. INDEXOF METHOD: The `.indexOf()` method takes 1 arg, a value, and returns the first index position of that value found in the array. Will return -1 if the element isn't present.
 //10. SPLICE METHOD: The `.splice()` method takes 3 args: the index which the method will mutate, the number of elements to remove from the index in the 1st arg, and the item(s) to add from the 1st arg's index.
 //NOTE for SPLICE METHOD: The `.splice()` can take 1 or 2 args only, which will result in removing a number of elements from the array which `.splice()` is applied. Read MDN documents for further detail.
+//11. SLICE METHOD: The `.slice()` method can take 1 or 2 args. The 1st arg indicates which index to start slicing and returning a copy of the original array.
+//NOTE FOR SLICE METHOD: The 2nd arg indicates where to stop slicing. This method DOES NOT alter the original array that the method is executed on.
