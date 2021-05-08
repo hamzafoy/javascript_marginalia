@@ -80,8 +80,15 @@ console.log(filteredByFilter); //EXPECTED OUTPUT is [57.565, 99.99991]
                       /*        15       */
 console.log(listOfNums.find(filterFilter)); //EXPECTED OUTPUT is 57.565
 
-/* */
+                           /*        16        */
+console.log(longListOfItems.includes('Tajweed')); //EXPECTED OUTPUT is true
 
+                      /*          17          */
+console.log([2, 5, 10].map(value => value * 3)); //EXPECTED OUTPUT is [6, 15, 30]
+
+let reducedVinegar = (acc, currentValue) => acc + currentValue;
+                       /*          18         */
+console.log([3, 12, 21].reduce(reducedVinegar)); //EXPECTED OUTPUT is 36
 
 
 
@@ -107,3 +114,6 @@ console.log(listOfNums.find(filterFilter)); //EXPECTED OUTPUT is 57.565
 //13. EVERY METHOD: The `.every()` method returns a Boolean value depending on whether every element of the array passes the test provided by the function passed through the method.
 //14. FILTER METHOD: The `.filter()` method CREATES a new array with elements which pass test(s) implemented by the function passed to the `.filter()` method.
 //15. FIND METHOD: The `.find()` method returns the FIRST value that passes the test in the function passed to the `.find()` method.
+//16. INCLUDES METHOD: The `.includes()` method accepts 1 arg which is a value you want to test whether it is in the array or not. Returns a Boolean value depending on result.
+//17. MAP METHOD: The `.map()` method CREATES a new array populated with new elements which would be the results of the function passed to the `.map()` method executed on each element.
+//18. REDUCE METHOD: The `.reduce()` method executes functions towards 'reducing' the elements of an array to a single outputted value.
