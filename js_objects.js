@@ -12,7 +12,14 @@ let army = {
     infantry: 10000, //`infantry`, `cavalry`, `bowmen`, & `onagers` are all properties of this object.
     cavalry: 200,
     bowmen: 2000,
-    onagers: 12
+    onagers: 12,
+    raiseLevy () { //`.raiseLevy()` is a method of this object.
+        army.infantry = army.infantry + 100;
+    },
+    general: {
+        name: 'Scipio Africanus',
+        rank: 'imperator'
+    }
 };
 
 //You can access an object's properties using 'dot notation'.
@@ -26,11 +33,21 @@ let propReader = (obj, prop) => obj[prop];
 console.log(propReader(army, 'cavalry')); //EXPECTED OUTPUT is 200.
 
 //Assigning values to existing properties or assigning new properties. You can use either bracket or dot notation.
+//When using bracket notation to assign or mutate properties in an object, you must list the value as a string.
+//As in the case of an array, you can mutate the properties (add or change) of an object stored to a `const` variable. You just can't reassign a new object to the `const`.
 army.mercenaries = 500;
 army['onagers'] = 24;
 console.log(army); //EXPECTED OUTPUT is 500 mercenaries added & 24 onagers.
 delete army['mercenaries'];
-console.log(army); //EXPECTED OUTPUT is army object absent any mercenaries.
+console.log(army); //EXPECTED OUTPUT is `army` object absent any mercenaries.
+
+//Methods are invoked with dot notation with parentheses at the end of the method's name.
+//METHODS are the actions that an object has, PROPERTIES are the attributes that an object has.
+army.raiseLevy();
+console.log(army); //EXPECTED OUTPUT is `army` object with 10100 infantry.
+
+//You can have nested objects which rely on chaining bracket or dot notation to access nested properties and their values.
+console.log(`This army is led by general ${army.general['name']}`);
 
 
 
