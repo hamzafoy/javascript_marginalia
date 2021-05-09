@@ -47,7 +47,7 @@ army.raiseLevy();
 console.log(army); //EXPECTED OUTPUT is `army` object with 10100 infantry.
 
 //You can have nested objects which rely on chaining bracket or dot notation to access nested properties and their values.
-console.log(`This army is led by general ${army.general['name']}`);
+console.log(`This army is led by general ${army.general['name']}`); //EXPECTED OUTPUT is 'This army is led by general Scipio Africanus'.
 
 
 
