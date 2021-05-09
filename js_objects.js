@@ -9,11 +9,14 @@
 /* OBJECT */
 let army = {
     /* KEY */  /* Value */
-    infantry = '10000', //`infantry`, `cavalry`, `bowmen`, & `onagers` are all properties of this object.
-    cavalry = '200',
-    bowmen = '2000',
-    onagers = '12'
+    infantry: '10000', //`infantry`, `cavalry`, `bowmen`, & `onagers` are all properties of this object.
+    cavalry: '200',
+    bowmen: '2000',
+    onagers: '12'
 }
+
+//You can access an object's properties using 'dot notation'.
+console.log(`My army has ${army.infantry} footmen & ${army.bowmen} archers.`);
 
 
 
