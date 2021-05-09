@@ -19,6 +19,17 @@ let army = {
     general: {
         name: 'Scipio Africanus',
         rank: 'imperator'
+    },
+    scouts: {
+        firstParty: {
+            leader: 'Flavius Iulius Brutus'
+        },
+        secondParty: {
+            leader: 'Gnaeus Sulla'
+        },
+        thirdParty: {
+            leader: 'Quintus Cincinnatus'
+        }
     }
 };
 
@@ -49,8 +60,24 @@ console.log(army); //EXPECTED OUTPUT is `army` object with 10100 infantry.
 //You can have nested objects which rely on chaining bracket or dot notation to access nested properties and their values.
 console.log(`This army is led by general ${army.general['name']}`); //EXPECTED OUTPUT is 'This army is led by general Scipio Africanus'.
 
+//You can use functions to mutate object's properties, but not reassign a new object altogether.
+//Objects are passed by reference. The computer interprets the parameter name (variable assigned to an object) as pointing to the space in memory holding the object.
+let addElites = obj => {
+    obj.retinues = 'Triarii';
+};
+addElites(army);
+console.log(army); //EXPECTED OUTPUT is `army` object printed with a new `retinues` property with the value 'Triarii'.
+
+//You can loop through object elements. Use a for..in loop.
+/*            1           */
+for (let i in army.scouts) {
+    console.log(`Send for the leaders of our scouting party ${army.scouts[i].leader}`)
+}
+
 
 
 /*---------
 ~~~| INDEX |~~~
 ------------ */
+
+//1. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
