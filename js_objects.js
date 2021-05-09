@@ -16,6 +16,10 @@ let army = {
     raiseLevy () { //`.raiseLevy()` is a method of this object.
         army.infantry = army.infantry + 100;
     },
+    buildArtillery () {
+        /*     1     */
+        this.onagers++;
+    },
     general: {
         name: 'Scipio Africanus',
         rank: 'imperator'
@@ -30,7 +34,8 @@ let army = {
         thirdParty: {
             leader: 'Quintus Cincinnatus'
         }
-    }
+    },
+    _intellectualProperty: 'Hamza Foy Games LLC'
 };
 
 //You can access an object's properties using 'dot notation'.
@@ -69,10 +74,16 @@ addElites(army);
 console.log(army); //EXPECTED OUTPUT is `army` object printed with a new `retinues` property with the value 'Triarii'.
 
 //You can loop through object elements. Use a for..in loop.
-/*            1           */
+/*            2           */
 for (let i in army.scouts) {
     console.log(`Send for the leaders of our scouting party ${army.scouts[i].leader}`)
-}
+};
+
+army.buildArtillery();
+console.log(army.onagers); //EXPECTED OUTPUT is 25 (onagers).
+
+           /*            3            */
+console.log(army._intellectualProperty);
 
 
 
@@ -80,4 +91,8 @@ for (let i in army.scouts) {
 ~~~| INDEX |~~~
 ------------ */
 
-//1. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
+//1. THIS (KEYWORD): The `this` keyword is a useful keyword that allows you to gain access to the other properties found in an object which has
+// a method in it that is trying to access that object's own properties. The `this` keyword references the calling object & grants access to the calling object's properties.
+// Try to avoid arrow functions with using the `this` keyword.
+//2. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
+//3. UNDERSCORE: The _underscore at the beginning of a property's name is usually used to instruct the developer that the property is NOT meant to be manipulated.
