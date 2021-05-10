@@ -148,11 +148,14 @@ console.log(general.name); //EXPECTED OUTPUT is Marcus Aurelius
 let keysOfTheArmy = Object.keys(legioferrata);
 console.log(keysOfTheArmy); //EXPECTED OUTPUT is [ 'infantry', 'cavalry', 'bowmen', 'onagers', 'general' ]
 
-                      /*            7            */
+let valuesOfTheArmy = Object.values(legioferrata);
+console.log(valuesOfTheArmy); //EXPECTED OUTPUT is [ 12000, 1000, 500, 0, { name: 'Marcus Aurelius', rank: 'augustus' } ]
+
+                      /*            8            */
 let armyComposition = Object.entries(legioferrata);
 console.log(armyComposition); //EXPECTED OUTPUT is an array of arrays with each inner array containing the key & value pairs of each property of `legioferrata`.
 
-                  /*                                           8                                             */
+                  /*                                           9                                             */
 let legioaugusta = Object.assign(legioferrata, {scouts: {firstParty: {leader: 'Odoacer', dispatched: false}}});
 console.log(legioaugusta); //EXPECTED OUTPUT is a new object containing all properties that were found in `legioferrata` + a `scouts` object containing a `firstParty` object with 2 properties.
 
@@ -169,6 +172,7 @@ console.log(legioaugusta); //EXPECTED OUTPUT is a new object containing all prop
 //3. SETTER METHOD: Setter methods are used to access and alter INTERNAL properties of the object that the setter is assigned to.
 //4. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
 //5. UNDERSCORE: The _underscore at the beginning of a property's name is usually used to instruct the developer that the property is NOT meant to be manipulated.
-//6. KEYS METHOD: The `.keys()` is called on any object to form an array containing the names of properties of the given object as strings.
-//7. ENTRIES METHOD: The `.entries()` is called on any object to form an array of arrays, each inner array containing the key-value pair of each property found in the given object.
-//8. ASSIGN METHOD: The `.assign()` takes two parameters - a TARGET object which is the object accepting the properties of the 2nd parameter which is the SOURCE object.
+//6. KEYS METHOD: The `.keys()` is called on any object to form an array containing the NAMES of properties of the given object as strings.
+//7. VALUES METHOD: The `.values()` is called on any object to form an array containing strings which are the VALUES of properties of the given object.
+//8. ENTRIES METHOD: The `.entries()` is called on any object to form an array of arrays, each inner array containing the key-value pair of each property found in the given object.
+//9. ASSIGN METHOD: The `.assign()` takes two parameters - a TARGET object which is the object accepting the properties of the 2nd parameter which is the SOURCE object.
