@@ -111,8 +111,27 @@ army.pillage
 army.sendScout = true;
 console.log(army.scouts); //EXPECTED OUTPUT is the 'dispatched' property of each party of scouts is set to TRUE
 
-//Factory Functions
-const armyBarracks = ()
+/*-------------------------------
+~~~| What is a FACTORY FUNCTION? |~~~
+---------------------------------- */
+
+//Factory Functions allow for multiple object instances to be produced as a return of the factory function.
+//Factory Functions take parameters which allow for custom values to be set to designated keys/properties of the created object.
+const armyBarracks = (infantry, cavalry, bowmen, onagers, name, rank) => {
+    return {
+        infantry, //ES6 NOTE: Destructuring allows for 'property value shorthand'. This line is EQUIVALENT to `infantry: infantry`.
+        cavalry,
+        bowmen,
+        onagers,
+        general: {
+            name,
+            rank
+        }
+    }
+};
+
+const legioferrata = armyBarracks(12000, 1000, 500, 0, 'Marcus Aurelius', 'augustus');
+console.log(legioferrata); //EXPECTED OUTPUT is an object { infantry: 12000, cavalry: 1000, bowmen: 500, onagers: 0, general: { name: 'Marcus Aurelius', rank: 'augustus'} }
 
 
 
