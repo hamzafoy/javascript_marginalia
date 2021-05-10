@@ -111,6 +111,7 @@ army.pillage
 army.sendScout = true;
 console.log(army.scouts); //EXPECTED OUTPUT is the 'dispatched' property of each party of scouts is set to TRUE
 
+
 /*-------------------------------
 ~~~| What is a FACTORY FUNCTION? |~~~
 ---------------------------------- */
@@ -133,6 +134,28 @@ const armyBarracks = (infantry, cavalry, bowmen, onagers, name, rank) => {
 const legioferrata = armyBarracks(12000, 1000, 500, 0, 'Marcus Aurelius', 'augustus');
 console.log(legioferrata); //EXPECTED OUTPUT is an object { infantry: 12000, cavalry: 1000, bowmen: 500, onagers: 0, general: { name: 'Marcus Aurelius', rank: 'augustus'} }
 
+//Destructured Assignment
+//You can use destructured assignment to extract properties and their key/value pairs from objects and save them to variables.
+//You set the name of the new variable to the name of the object's key inside curly brackets and assign it to the object. You can access nested properties as well.
+const { general } = legioferrata;
+console.log(general.name); //EXPECTED OUTPUT is Marcus Aurelius
+
+
+//OBJECT METHODS
+//There are some methods that are built into objects and all objects automatically come with these methods.
+
+                    /*           6          */
+let keysOfTheArmy = Object.keys(legioferrata);
+console.log(keysOfTheArmy); //EXPECTED OUTPUT is [ 'infantry', 'cavalry', 'bowmen', 'onagers', 'general' ]
+
+                      /*            7            */
+let armyComposition = Object.entries(legioferrata);
+console.log(armyComposition); //EXPECTED OUTPUT is an array of arrays with each inner array containing the key & value pairs of each property of `legioferrata`.
+
+                  /*                                           8                                             */
+let legioaugusta = Object.assign(legioferrata, {scouts: {firstParty: {leader: 'Odoacer', dispatched: false}}});
+console.log(legioaugusta); //EXPECTED OUTPUT is a new object containing all properties that were found in `legioferrata` + a `scouts` object containing a `firstParty` object with 2 properties.
+
 
 
 /*---------
@@ -143,6 +166,9 @@ console.log(legioferrata); //EXPECTED OUTPUT is an object { infantry: 12000, cav
 // a method in it that is trying to access that object's own properties. The `this` keyword references the calling object & grants access to the calling object's properties.
 // Try to avoid arrow functions with using the `this` keyword.
 //2. GETTER METHOD: Getter methods, which are called as if accessing a property, are used to get and return INTERNAL properties of an object the getter is written in.
-//3. 
+//3. SETTER METHOD: Setter methods are used to access and alter INTERNAL properties of the object that the setter is assigned to.
 //4. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
 //5. UNDERSCORE: The _underscore at the beginning of a property's name is usually used to instruct the developer that the property is NOT meant to be manipulated.
+//6. KEYS METHOD: The `.keys()` is called on any object to form an array containing the names of properties of the given object as strings.
+//7. ENTRIES METHOD: The `.entries()` is called on any object to form an array of arrays, each inner array containing the key-value pair of each property found in the given object.
+//8. ASSIGN METHOD: The `.assign()` takes two parameters - a TARGET object which is the object accepting the properties of the 2nd parameter which is the SOURCE object.
