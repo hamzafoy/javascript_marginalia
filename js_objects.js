@@ -26,16 +26,37 @@ let army = {
     },
     scouts: {
         firstParty: {
-            leader: 'Flavius Iulius Brutus'
+            leader: 'Flavius Iulius Brutus',
+            dispatched: false
         },
         secondParty: {
-            leader: 'Gnaeus Sulla'
+            leader: 'Gnaeus Sulla',
+            dispatched: false
         },
         thirdParty: {
-            leader: 'Quintus Cincinnatus'
+            leader: 'Quintus Cincinnatus',
+            dispatched: false
         }
     },
-    _intellectualProperty: 'Hamza Foy Games LLC'
+    _intellectualProperty: 'Hamza Foy Games LLC',
+    /*     2     */
+    get pillage() {
+        if (this.cavalry && this.infantry) {
+            console.log(`Your footmen and horsemen set out to pilfer the countryside.`);
+        } else {
+            console.log(`You do not have sufficient manpower to engage in this action.`);
+        }
+    },
+    /*          3         */
+    set sendScout(boolean) {
+        for (let i in army.scouts) {
+            if(typeof boolean === "boolean") {
+                this.scouts[i].dispatched = boolean;
+            } else {
+                console.log('Wrong use of this action!');
+            }
+        }
+    }
 };
 
 //You can access an object's properties using 'dot notation'.
@@ -74,7 +95,7 @@ addElites(army);
 console.log(army); //EXPECTED OUTPUT is `army` object printed with a new `retinues` property with the value 'Triarii'.
 
 //You can loop through object elements. Use a for..in loop.
-/*            2           */
+/*            4           */
 for (let i in army.scouts) {
     console.log(`Send for the leaders of our scouting party ${army.scouts[i].leader}`)
 };
@@ -82,8 +103,16 @@ for (let i in army.scouts) {
 army.buildArtillery();
 console.log(army.onagers); //EXPECTED OUTPUT is 25 (onagers).
 
-           /*            3            */
+           /*            5            */
 console.log(army._intellectualProperty);
+
+//GETTER & SETTER METHODS allow both access to internal properties and reassignment of the values of said properties. Access both methods with syntax similar to accessing properties.
+army.pillage
+army.sendScout = true;
+console.log(army.scouts); //EXPECTED OUTPUT is the 'dispatched' property of each party of scouts is set to TRUE
+
+//Factory Functions
+const armyBarracks = ()
 
 
 
@@ -94,5 +123,7 @@ console.log(army._intellectualProperty);
 //1. THIS (KEYWORD): The `this` keyword is a useful keyword that allows you to gain access to the other properties found in an object which has
 // a method in it that is trying to access that object's own properties. The `this` keyword references the calling object & grants access to the calling object's properties.
 // Try to avoid arrow functions with using the `this` keyword.
-//2. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
-//3. UNDERSCORE: The _underscore at the beginning of a property's name is usually used to instruct the developer that the property is NOT meant to be manipulated.
+//2. GETTER METHOD: Getter methods, which are called as if accessing a property, are used to get and return INTERNAL properties of an object the getter is written in.
+//3. 
+//4. FOR..IN LOOP: For..in loops allow for the iteration through objects and can pull specific data out of objects or nested objects.
+//5. UNDERSCORE: The _underscore at the beginning of a property's name is usually used to instruct the developer that the property is NOT meant to be manipulated.
