@@ -17,12 +17,16 @@ class Levy {
     get roster() {
         console.log(`This levy is a force of ${this.infantry} footmen, ${this.cavalry} riders, ${this.bowmen} archers, & ${this.onagers} pieces of artillery.`)
     }
+    /*       2        */
+    static raiseLevy() {
+        return new this(1000, 500, 500, 0);
+    }
 };
 
-           /* 2 */
+           /* 3 */
 class Army extends Levy {
     constructor(infantry, cavalry, bowmen, onagers, name, rank) {
-        /*                  3                   */
+        /*                  4                   */
         super(infantry, cavalry, bowmen, onagers);
         this.general = {
             name,
@@ -36,6 +40,8 @@ console.log(garrisonTarentum); //EXPECTED OUTPUT is Levy { infantry: 17500, cava
 garrisonTarentum.roster; //EXPECTED OUTPUT is 'This levy is a force of 17500 footmen, 500 riders, 1250 archers, & 0 pieces of artillery.'
 const legioapollonaris = new Army(22345, 250, 2500, 6, 'Lucius Annaeus Seneca', 'centurion');
 console.log(legioapollonaris); //EXPECTED OUTPUT is Army { infantry: 22345, cavalry: 250, bowmen: 2500, onagers: 6, general: { name: 'Lucius Annaeus Seneca', rank: 'centurion' } }
+console.log(Levy.raiseLevy());
+
 
 
 
@@ -44,5 +50,6 @@ console.log(legioapollonaris); //EXPECTED OUTPUT is Army { infantry: 22345, cava
 ------------ */
 
 //1. CONSTRUCTOR METHOD: The `constructor()` method takes a range of parameters that will be used to create the key-value pairs of objects created using the class the constructor belongs to.
-//2. EXTENDS KEYWORD: The `extends` keyword instructs a class to 'inherit' the properties/methods of a parent class. The class name to the left of `extends` is the child, the class name on right is parent.
-//3. SUPER METHOD: The `super()` method takes parameters which are the parameters that are expected to be the same inputs that both parent and child class would receive.
+//2. STATIC METHOD: Static methods belong to a class itself, not to created instances or objects that may have been manufactured through that class.
+//3. EXTENDS KEYWORD: The `extends` keyword instructs a class to 'inherit' the properties/methods of a parent class. The class name to the left of `extends` is the child, the class name on right is parent.
+//4. SUPER METHOD: The `super()` method takes parameters which are the parameters that are expected to be the same inputs that both parent and child class would receive.
