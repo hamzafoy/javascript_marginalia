@@ -17,7 +17,7 @@
 
 
 /*------------------
-~~~| What is Babel? |~~~
+~~~| What is BABEL? |~~~
 --------------------- */
 
 //Babel is a JS library that enables the 'transpilation' of JavaScript. 
