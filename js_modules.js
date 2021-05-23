@@ -6,7 +6,7 @@
 //Which runtime environment your program runs on determines what GLOBAL OBJECTS your program can access.
 //In general, JavaScript is typically seen running on two runtime environments:
 // 1. BROWSER: includes Chrome, Firefox, & the eventually out-of-service Internet Explorer.
-// 2. NODE: 
+// 2. NODE: A runtime environment that is separate from the browser.
 
 
 
