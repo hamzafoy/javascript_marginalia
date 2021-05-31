@@ -26,6 +26,6 @@
 //You start by running `npm install babel-cli -D` & `babel-preset-env -D`. Bear in mind these are two separate libraries necessary for Babel: `babel-cli` & `babel-preset-env`.
 
 //It is good to put any ES6 JavaScript code into a directory INSIDE the root directory called `src`. The path to the ES6 code would be `./src/[file name here]`.
-//You then create a file `.babelrc` in the ROOT directory and ensure this file contains an object { "preset": ["env"] }. This will instruct Babel that it is transpiling code that belongs to ES6 (& later) syntax.
+//You then create a file `.babelrc` in the ROOT directory and ensure this file contains an object { "presets": ["env"] }. This will instruct Babel that it is transpiling code that belongs to ES6 (& later) syntax.
 //You then put a 'script' in your `package.json` file that will initiate the ES6+ to ES5 transpilation. Put `babel src -d lib` as the value to a `build` property under scripts.
 //EX: `"build": "babel src -d lib". `babel` is a command to transpile code, `src` instructs which directory the code needing to transpiled is, `-d` instructs to write the code into a directory, `lib` points to said directory.
