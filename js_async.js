@@ -42,3 +42,37 @@ thePromise()
 //You can chain multiple `.then()` in which case you need to NOT nest them inside one another and you should be returning a promise inside the `.then()` methods.
 //Use `Promise.all()` allows multiple async operations to happen concurrently - if every single Promise resolves, an array will be returned containing the resolve value of each promise in the array.
 //If any promise fails in `Promise.all()`, expect the reason for that one promise rejecting.
+
+
+
+/*---------------------------------
+~~~| NATIVE PROMISE vs ASYNC/AWAIT |~~~
+------------------------------------ */
+
+function nativePromiseVersion() {
+    returnFirstPromise()
+        .then((firstValue) => {
+            console.log(firstValue);
+            return returnsSecondPromise(firstValue);
+        })
+        .then((secondValue) => {
+            console.log(secondValue);
+        })
+}
+
+//The above is native Promise syntax.
+//returnFirstPromise() & returnsSecondPromise() return promises.
+//returnFirstPromise is invoked & the first chained `.then()` ensures that the first promise is resolved.
+//In the callback of the first `.then()`, the resolved value in `firstValue` is returned within the 2nd function and the returned promise is logged in the second `.then()`.
+
+async function asyncAwaitVersion() {
+    let firstValue = await returnsFirstPromise();
+    console.log(firstValue);
+    let secondValue = await returnsSecondPromise(firstValue);
+    console.log(secondValue);
+}
+
+//Async/Await syntax proves useful in that you can store and refer to resolved values from promises throughout the chain of the asynchronous function. The syntax also looks more similar to typical synchronous JS.
+//The ASYNC keyword will always go before a function when one expects a Promise to be returned.
+//The AWAIT keyword can only be used inside a function with the keyword ASYNC. The AWAIT keyword makes the function execution wait until the promise settles & returns its result.
+//The AWAIT keyword's suspension of function execution does not cost any CPU resources.
