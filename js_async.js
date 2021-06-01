@@ -76,3 +76,5 @@ async function asyncAwaitVersion() {
 //The ASYNC keyword will always go before a function when one expects a Promise to be returned.
 //The AWAIT keyword can only be used inside a function with the keyword ASYNC. The AWAIT keyword makes the function execution wait until the promise settles & returns its result.
 //The AWAIT keyword's suspension of function execution does not cost any CPU resources.
+//You can use TRY/CATCH blocks to handle the success & potential failure of promise(s) resolving.
+//It should be noted that async/await syntax is syntactical sugar and does not process promises quicker.
