@@ -97,7 +97,7 @@ fetch('https://api-to-call.com/endpoint', {
 })
 
 
-//The following is boilerplate ASYNC/AWAIT Syntax for a GET request:
+//The following is boilerplate ASYNC/AWAIT syntax for a GET request:
 
 const getData = async () => {
     try {
@@ -107,6 +107,25 @@ const getData = async () => {
         return jsonResponse;
       }
       throw new Error('Request failed!')
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+
+  //The following is boilerplate ASYNC/AWAIT syntax for a POST request:
+
+  const getData = async () => {
+    try {
+      const response = await fetch('https://api-to-call.com/endpoint', {
+        method: 'POST',
+        body: JSON.stringify({id: 200})
+      })
+      if(response.ok) {
+        const jsonResponse = await response.json();
+        return jsonResponse;
+      }
+      throw new Error('Request failed!');
     } catch(error) {
       console.log(error);
     }
