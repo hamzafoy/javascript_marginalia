@@ -71,3 +71,43 @@ The first opening tag & final closing tag of a JSX expression MUST belong to the
     }
 
 ---*/
+
+
+
+/*-----------------
+~~~| RENDERING JSX |~~~
+-------------------- */
+
+//Using the ReactDOM library, you access a number of React-specific methods such as `.render()` which takes two arguments.
+//You pass `.render()` two arguments - 1st being the JSX expression to be rendered & the 2nd being where the JSX expression will be appended.
+//`.render()` creates a corresponding tree of DOM nodes. The 2nd argument acts as a 'container' for the JSX expression in the 1st argument.
+
+//EXAMPLE:
+
+/*---
+
+ReactDOM.render(<h1>Render me!</h1>, document.getElementById('container'));
+
+^ In the above example, the <h1> JSX is going to be rendered inside a container with the id of 'container', the id=container html tag must be found in the accompanying HTML file.
+
+--*/
+
+/*---
+
+const myList = (
+  <ul>
+    <li>Test 1</li>
+    <li>Test 2</li>
+    <li>Test 3</li>
+    <li>Test 4</li>
+  </ul>
+);
+
+ReactDOM.render(
+  myList,
+  document.getElementById('app')
+);
+
+^ In the above example, you can pass a variable storing a JSX expression to the 1st argument of `ReactDOM.render()`.
+
+---*/
