@@ -81,6 +81,8 @@ The first opening tag & final closing tag of a JSX expression MUST belong to the
 //Using the ReactDOM library, you access a number of React-specific methods such as `.render()` which takes two arguments.
 //You pass `.render()` two arguments - 1st being the JSX expression to be rendered & the 2nd being where the JSX expression will be appended.
 //`.render()` creates a corresponding tree of DOM nodes. The 2nd argument acts as a 'container' for the JSX expression in the 1st argument.
+//ReactDOM.render() will only update DOM elements that have changed.
+//If you render the exact same thing twice, the 2nd render will do nothing - cutting down on inefficiency of DOM updates.
 
 //EXAMPLE:
 
