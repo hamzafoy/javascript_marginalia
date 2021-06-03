@@ -94,6 +94,7 @@ ReactDOM.render(<h1>Render me!</h1>, document.getElementById('container'));
 
 --*/
 
+
 /*---
 
 const myList = (
@@ -113,3 +114,57 @@ ReactDOM.render(
 ^ In the above example, you can pass a variable storing a JSX expression to the 1st argument of `ReactDOM.render()`.
 
 ---*/
+
+
+/*---
+
+const name = 'Hamza Foy';
+
+ReactDOM.render(<h1>{name}</h1>, document.getElementById('app'));
+
+^ In the above example, you can access variables outside of JSX, JavaScript injected into JSX is still in the same environment as the remaining JavaScript.
+The first argument to ReactDOM.render() can be a JSX expression with a curly-brace call to an outside JavaScript variable.
+
+---*/
+
+
+/*---
+
+const pics = {
+  panda: "http://bit.ly/1Tqltv5",
+  owl: "http://bit.ly/1XGtkM3",
+  moose: "http://bit.ly/1Upbczi"
+}; 
+ 
+const panda = (
+  <img 
+    src={pics.panda} 
+    alt="Kung Fu Panda" />
+);
+ 
+const owl = (
+  <img 
+    src={pics.owl} 
+    alt="Sleepy Owl" />
+);
+ 
+const moose = (
+  <img 
+    src={pics.moose} 
+    alt="Moose of the Moot" />
+); 
+
+^ In the above example, you can find that attributes can be set from object properties (as well as from variables).
+
+---*/
+
+
+
+/*-------------------
+~~~| Notes about JSX |~~~
+---------------------- */
+
+//We are accustomed to `class` being an attribute in HTML, but with JSX, this attribute MUST be listed as `className="example"` as `class` is a reserved word in JS.
+//In JSX, all self-closing tags such as `<img/>`, `<input/>`, & `<br/>` MUST include the `/` at the end before the 2nd bracket unlike HTML.
+//In JSX, JavaScript can be embedded in JSX in curly braces - ex: <h1>{2 + 3}</h1> will render '5' in the browser.
+
