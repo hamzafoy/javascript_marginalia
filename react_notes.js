@@ -376,3 +376,28 @@ ReactDOM.render(<QuoteGenerator/>, document.getElementById('app'))
 This example displays rendering multi-line JSX
 
 ---*/
+
+/*---
+
+const owl = {
+  title: 'Observant Owl',
+  src: './photo-owl.jpg'
+};
+
+class Owl extends React.Component {
+  render() {
+    return (
+      <div>
+      <h1>{owl.title}</h1>
+      <img
+      src={owl.src}
+      alt={owl.title}
+      />
+      </div>
+      )
+  }
+}
+
+This example displays the use of JavaScript injections into the JSX to pull info from a defined variable.
+
+---*/
