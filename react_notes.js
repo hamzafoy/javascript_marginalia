@@ -323,6 +323,8 @@ const greatestDivEver = React.createElement(
 //To create a new component, you use the ES2015 `class` syntax to EXTEND `React.Component`, that new component you subclassed from `React.Component` can be reused as much as you want.
 //Please note that newly created components MUST be written in UpperCamelCase, ex: `MyComponent`, `ThisNewComponent`, etc.
 //All new components, subclass'd from `React.Component`, MUST include a `render() {}` function inside the `class` curly braces. This `render() {}` function MUST include a `return`.
+//You can place any logic before the `return` statement, provided there is a `return` statement at the end of the new component's `render method`.
+//You can place any conditionals before the `return` statement of a component's `render method`.
 
 
 //EXAMPLE:
@@ -399,5 +401,55 @@ class Owl extends React.Component {
 }
 
 This example displays the use of JavaScript injections into the JSX to pull info from a defined variable.
+
+---*/
+
+
+/*---
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class TodaysPlan extends React.Component {
+  render() {
+    let task;
+    if (!apocalypse) {
+      task = 'learn React.js'
+    } else {
+      task = 'run around'
+    }
+
+    return <h1>Today I am going to {task}!</h1>;
+  }
+}
+
+ReactDOM.render(
+	<TodaysPlan />,
+	document.getElementById('app')
+);
+
+This example displays the use of conditionals inside a new component's `render()` method.
+
+---*/
+
+
+/*---
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Button extends React.Component {
+  yodel() {
+    alert('YODELAHIHOO');
+  }
+
+  render() {
+    return <button onClick={this.yodel}>Hear the call of my people. . .</button>;
+  }
+}
+
+ReactDOM.render(<Button/>, document.getElementById('app'))
+
+This example shows the use of event listeners in React Components.
 
 ---*/
