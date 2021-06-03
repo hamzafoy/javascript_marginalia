@@ -6,9 +6,10 @@
 
 
 
-/*------------------
-~~~| What is REACT? |~~~
---------------------- */
+/*---------------------
+~~~| How to get REACT? |~~~
+------------------------ */
+
 /*---
 
 IMPORT React with the following. . .
@@ -18,6 +19,8 @@ import ReactDOM from 'react-dom';
 
 /*---
 
+//The `React` object has properties & methods SPECIFIC to React.
+//ReactDOM object's methods/properties are intended to be used in interacting with the DOM.
 
 
 /*----------------------
@@ -213,6 +216,22 @@ You will need `key` JSX attributes for rendered list items that might be reshuff
 //Event Listeners are written in camelCase, ex: `onClick`, `onMouseOver`, etc.
 //Event Listeners are written as an attribute to JSX and its VALUE MUST BE A FUNCTION that has already been defined.
 
+/*---
+
+function madeUpFunc() {
+  console.log(`Yaaaaaas!`);
+}
+
+const image = (
+<img
+src="./image.png"
+className="leedle"
+onClick={madeUpFunc}
+/>
+)
+
+---*/
+
 
 
 /*----------------------
@@ -293,3 +312,67 @@ const greatestDivEver = React.createElement(
 //We are accustomed to `class` being an attribute in HTML, but with JSX, this attribute MUST be listed as `className="example"` as `class` is a reserved word in JS.
 //In JSX, all self-closing tags such as `<img/>`, `<input/>`, & `<br/>` MUST include the `/` at the end before the 2nd bracket unlike HTML.
 //In JSX, JavaScript can be embedded in JSX in curly braces - ex: <h1>{2 + 3}</h1> will render '5' in the browser.
+
+
+
+/*--------------------
+~~~| REACT COMPONENTS |~~~
+----------------------- */
+
+//React Components are useable code blocks that are responsible for rendering HTML.
+//To create a new component, you use the ES2015 `class` syntax to EXTEND `React.Component`, that new component you subclassed from `React.Component` can be reused as much as you want.
+//Please note that newly created components MUST be written in UpperCamelCase, ex: `MyComponent`, `ThisNewComponent`, etc.
+//All new components, subclass'd from `React.Component`, MUST include a `render() {}` function inside the `class` curly braces. This `render() {}` function MUST include a `return`.
+
+
+//EXAMPLE:
+
+/*---
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class MyComponentClass extends React.Component {
+  render() {
+    return <h1>Hello world</h1>;
+  }
+}
+
+ReactDOM.render(
+	<MyComponentClass />, 
+	document.getElementById('app')
+);
+
+You'll notice that to actually RENDER the new React component you've made, you simply call it as a component instance with a self-closing and UpperCamelCase tag: <MyComponentClass />
+
+---*/
+
+
+/*---
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class QuoteGenerator extends React.Component {
+  render() {
+    return (
+      <blockquote>
+  <p>
+    What is important now is to recover our senses.
+  </p>
+  <cite>
+    <a target="_blank" 
+      href="https://en.wikipedia.org/wiki/Susan_Sontag">
+      Susan Sontag
+    </a>
+  </cite>
+</blockquote>
+    )
+  }
+}
+
+ReactDOM.render(<QuoteGenerator/>, document.getElementById('app'))
+
+This example displays rendering multi-line JSX
+
+---*/
