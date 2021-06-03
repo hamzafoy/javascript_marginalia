@@ -6,6 +6,20 @@
 
 
 
+/*------------------
+~~~| What is REACT? |~~~
+--------------------- */
+/*---
+
+IMPORT React with the following. . .
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+/*---
+
+
+
 /*----------------------
 ~~~| How does JSX work? |~~~
 ------------------------- */
@@ -159,6 +173,118 @@ const moose = (
 ---*/
 
 
+/*---
+
+const people = ['Ross', 'Parnell', 'Gary'];
+
+const peopleList = people.map(person =>
+<li>{person}</li>
+);
+
+ReactDOM.render(<ul>{peopleList}</ul>, document.getElementById('app'))
+
+^ In the above example, you can use the `.map()` method to create a list of elements. <li> can be in an array in JSX.
+
+---*/
+
+
+/*---
+
+const people = ['Ross', 'Parnell', 'Gary'];
+
+const peopleList = people.map((person, i) =>
+<li key={'person_' + i}>{person}</li>
+);
+
+ReactDOM.render(<ul>{peopleList}</ul>, document.getElementById('app'))
+
+^ In the above example, you can use add unique keys to rendered list items.
+You will need `key` JSX attributes for rendered list items that might be reshuffled or where its placement SHOULD be remembered such as with to-do lists.
+
+---*/
+
+
+
+/*-------------------------
+~~~| REACT EVENT LISTENERS |~~~
+---------------------------- */
+
+//React utilizes EVENT LISTENERS, but there are variations btwn React event listeners & event listeners one might find in HTML. . .
+//Event Listeners are written in camelCase, ex: `onClick`, `onMouseOver`, etc.
+//Event Listeners are written as an attribute to JSX and its VALUE MUST BE A FUNCTION that has already been defined.
+
+
+
+/*----------------------
+~~~| REACT CONDITIONALS |~~~
+------------------------- */
+
+/*---
+
+let message;
+
+if (user.age >= 18) {
+  message = (
+    <h1>
+      Hey, go ahead and borrow the car!
+    </h1>
+  );
+} else {
+  message = (
+    <h1>
+      You don't have your driver license yet do you?
+    </h1>
+  );
+}
+
+^ In the above example, you will find that conditional statements CANNOT be injected within JSX, but can be used outside a JSX expression and still affect the JSX rendering. 
+
+---*/
+
+
+/*---
+
+let message = <h1>{user.age >= 18 ? 'Hey, go ahead and borrow the car!' : "You don't have your driver license yet do you?"}</h1>
+
+^ In the above example, you will find TERNARY OPERATORS working in React.
+
+---*/
+
+/*---
+
+const tasty = (
+  <ul>
+    <li>Applesauce</li>
+    { !baby && <li>Pizza</li> }
+    { age > 15 && <li>Brussels Sprouts</li> }
+    { age > 20 && <li>Oysters</li> }
+    { age > 25 && <li>Grappa</li> }
+  </ul>
+);
+
+^ In the above example, if the expression to the left of && is false, then what is to the right will NOT render. If the expression to the left of && is true, then what is to the right WILL render.
+
+---*/
+
+
+
+/*------------------------
+~~~| REACT CREATE.ELEMENT |~~~
+--------------------------- */
+
+/*---
+
+const greatestDivEver = React.createElement(
+  "div",
+  null,
+  "i am div"
+);
+
+---*/
+
+//React.createElement() takes three arguments, the 1st being the HTML tag to create, the 2nd being React props, & the 3rd being what to place between the rendered tag.
+
+
 
 /*-------------------
 ~~~| Notes about JSX |~~~
@@ -167,4 +293,3 @@ const moose = (
 //We are accustomed to `class` being an attribute in HTML, but with JSX, this attribute MUST be listed as `className="example"` as `class` is a reserved word in JS.
 //In JSX, all self-closing tags such as `<img/>`, `<input/>`, & `<br/>` MUST include the `/` at the end before the 2nd bracket unlike HTML.
 //In JSX, JavaScript can be embedded in JSX in curly braces - ex: <h1>{2 + 3}</h1> will render '5' in the browser.
-
