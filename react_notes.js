@@ -12,6 +12,16 @@
 
 /*---
 
+`npx create-react-app myfirstreactapp`
+
+The command above will generate a boilerplate version of a React app.
+React utilizes `WEBPACK` as a tool to serve directories & files as static assets.
+
+---*/
+
+
+/*---
+
 IMPORT React with the following. . .
 
 import React from 'react';
