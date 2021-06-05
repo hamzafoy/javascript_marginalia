@@ -463,3 +463,33 @@ ReactDOM.render(<Button/>, document.getElementById('app'))
 This example shows the use of event listeners in React Components.
 
 ---*/
+
+
+//You can use a component's `.render()` to return 'component instances'.
+
+/*---
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {NavBar} from './NavBar'
+
+
+class ProfilePage extends React.Component {
+  render() {
+    return (
+      <div>
+        <NavBar/>
+        <h1>All About Me!</h1>
+        <p>I like movies and blah blah blah blah blah</p>
+        <img src="https://content.codecademy.com/courses/React/react_photo-monkeyselfie.jpg" />
+      </div>
+    );
+  }
+}
+
+^ In the above example, `NavBar` comes from another .js file.
+In React, separate .js files are invisible to one another until you export/import them.
+Using the import/export syntax, if the ending string begins with either a dot or a slash - `import` treats it like a filepath.
+Using the import/export syntax, if the filepath doesn't have a file extension, then it assumes it is a `.js` file.
+
+---*/
