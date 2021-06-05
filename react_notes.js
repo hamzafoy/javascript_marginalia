@@ -493,3 +493,11 @@ Using the import/export syntax, if the ending string begins with either a dot or
 Using the import/export syntax, if the filepath doesn't have a file extension, then it assumes it is a `.js` file.
 
 ---*/
+
+
+
+/*---------------
+~~~| REACT PROPS |~~~
+------------------ */
+
+//Components can interact by passing information to other components. Info that gets passed from one component to another is referred to as "props".
