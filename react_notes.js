@@ -612,3 +612,84 @@ Button.defaultProps = {
 }
 
 ---*/
+
+
+
+/*-----------------
+~~~| `REACT STATE` |~~~
+-------------------- */
+
+//React components often handle DYNAMIC information - info that changes over time, with user input, etc.
+//Components can get dynamic info through `props`, but also through `state`.
+//A component's `state` is NOT passed in from the outside, the component decides its own state.
+//`state` is a property given to a Component & should be declared inside of a constructor method.
+//The `state` property should be an OBJECT.
+//It is standard practice to have a `constructor` method and to call `super` for `props`.
+//Utilize `this.setState() to change a component's own `state` which takes an object as an argument.
+//The object taken by `this.setState()` merges with the component's current state and doesn't affect those parts of the state whose properties don't match the passed object in `this.setState()`.
+//`this.setState()` calls result in automatic calls of `.render()` which makes `state` changes appear automatically.
+//You CANNOT call `this.setState()` inside a component's `.render()` method or it results in an infinite loop.
+
+/*---
+
+class Army extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { size: 'large' }
+  }
+  render() {
+    return (
+      <div>
+      Hail Caesar! You have a {this.state.size} army!
+      </div>
+    )
+  }
+}
+
+^ In the above example, you can read & access the component's `state` with `this.state.[property key]`.
+
+---*/
+
+
+/*---
+
+class Army extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { size: 'large' }
+  }
+  render() {
+    return (
+      <div>
+      Hail Caesar! You have a {this.state.size} army!
+      </div>
+    )
+  }
+}
+
+---*/
+
+
+/*---
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { weather: 'sunny' }
+    this.makeSomeFog = this.makeSomeFog.bind(this);
+  }
+
+  makeSomeFog() {
+    this.setState(
+      {
+        weather: 'foggy'
+      }
+    )
+  }
+}
+
+^ In this example, a custom function wraps a `this.setState()` call.
+You notice the syntax `this.methodName = this.methodName.bind(this) on line 677.
+This syntax is used to ensure that the correct `this` is bound while using event listeners in this context.
+
+---*/
