@@ -504,6 +504,8 @@ Using the import/export syntax, if the filepath doesn't have a file extension, t
 //Each component has an object called `props`. You can see & access a component's `props` object using `this.props`.
 //You can pass `props` to a React Component by giving that Component an attribute - the attribute's name will serve as a key, the value after the = operator is the value matching the key.
 //When passing info that is not a string, wrap said info in curly braces.
+//Another use of `props` is in passing info to a component from another component.
+//In using `props` to pass info from component to component, you can also use `props` to make decisions and utilize conditionals.
 
 // EXAMPLE: <ExampleComponent message="Testing"/>
 
@@ -528,5 +530,85 @@ married={true}
 />
 
 ^ In the above example, you can display passed-in `props` info by using `this.props.[name of the key]`.
+
+---*/
+
+
+/*---
+
+***EXAMPLE FILE NAME: Button.js***
+import React from 'react';
+
+export class Button extends React.Component {
+  render() {
+    return (
+      //this.props.talk should be named this.props.onClick to follow React best practices.
+      <button onClick={this.props.talk}>
+        Click me!
+      </button>
+    );
+  }
+}
+
+
+***EXAMPLE FILE NAME: Chant.js***
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from './Button';
+
+class Chant extends React.Component {
+  //talk() {} should be named handleClick() {} to follow React best practices.
+  talk() {
+    let speech = '';
+    for (let i = 0; i < 10; i++) {
+      speech += 'Legio aeterna victrix!';
+    }
+    alert(speech);
+  }
+  
+  render() {
+    //talk= should be named onClick=, this.talk should be named this.handleClick
+    return <Button talk={this.talk} />;
+  }
+}
+
+ReactDOM.render(
+  <Chant />,
+  document.getElementById('app')
+);
+
+^ In the above example, an event listener is used to access `props` is execute a function passed from another component.
+
+---*/
+
+
+
+/*-------------------------
+~~~| `THIS.PROPS.CHILDREN` |~~~
+---------------------------- */
+
+//The `props` object of every component contains a property named `children`.
+//`this.props.children` will return everything in btwn a component's opening & closing JSX tag.
+//If `this.props.children` has more than one child element, then those children will be returned in an array.
+//You can set defaults to props that we are expecting. Use `[Component Name].defaultProps = { 'expected props key': 'default value'}`
+
+//EXAMPLE #1: <MyComponent>I am a child of MyComponent</MyComponent> has 1 child: "I am a child of MyComponent"
+//EXAMPLE #2: <MyComponent?<Test/><Test/></MyComponent> has 2 children and will return an array containing those children.
+
+/*---
+
+class Button extends React.Component {
+  render() {
+    return (
+      <button>
+      {this.props.text}
+      </button>
+    )
+  }
+}
+
+Button.defaultProps = {
+  text: 'Welcome guest, click me!'
+}
 
 ---*/
