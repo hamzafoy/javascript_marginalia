@@ -501,3 +501,32 @@ Using the import/export syntax, if the filepath doesn't have a file extension, t
 ------------------ */
 
 //Components can interact by passing information to other components. Info that gets passed from one component to another is referred to as "props".
+//Each component has an object called `props`. You can see & access a component's `props` object using `this.props`.
+//You can pass `props` to a React Component by giving that Component an attribute - the attribute's name will serve as a key, the value after the = operator is the value matching the key.
+//When passing info that is not a string, wrap said info in curly braces.
+
+// EXAMPLE: <ExampleComponent message="Testing"/>
+
+
+/*---
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      <h1>
+      Hello, {this.props.name}
+      </h1>
+    )
+  }
+}
+
+<Greeting
+name="Hamza Foy"
+town="Louisville"
+age={27}
+married={true}
+/>
+
+^ In the above example, you can display passed-in `props` info by using `this.props.[name of the key]`.
+
+---*/
