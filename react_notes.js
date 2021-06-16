@@ -693,3 +693,36 @@ You notice the syntax `this.methodName = this.methodName.bind(this) on line 677.
 This syntax is used to ensure that the correct `this` is bound while using event listeners in this context.
 
 ---*/
+
+
+//It is important to note:
+//React `props` should be used to store info that can be changed by a different Component.
+//React `state` should be used to store info that the component itself can change.
+
+
+/*---
+
+// This is a stateless child component.
+class BabyYoda extends React.Component {
+  render() {
+    return <h2>I am {this.props.name}!</h2>;
+  }
+}
+ 
+// This is a stateful Parent element.
+class Yoda extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: 'Toyoda' };
+  }
+ 
+  // The child component will render information passed down from the parent component.
+  render() {
+    return <BabyYoda name={this.state.name} />;
+  }
+}
+
+^ In this example, a `stateful` parent is passing its state to the `stateless` child.
+Notice how the `stateful` Component is using `this.state` in the `constructor() {}` while the `stateless` Component accesses that info via `this.props`.
+
+---*/
