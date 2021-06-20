@@ -65,7 +65,7 @@ class LinkedList {
   list.addToTail('winter')
   list.printList();
 
-
+  
 
   class DoublyLinkedList {
     constructor() {
