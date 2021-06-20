@@ -24,19 +24,19 @@ class Node {
     }
   }
   
-  let strawberryNode = new Node('Berry Tasty');
-  let vanillaNode = new Node('Vanilla');
-  let coconutNode = new Node('Coconuts for Coconut');
-  
-  vanillaNode.setNextNode(strawberryNode);
-  strawberryNode.setNextNode(coconutNode);
-  
-  let currentNode = vanillaNode;
-  
+  //let strawberryNode = new Node('Berry Tasty');
+  //let vanillaNode = new Node('Vanilla');
+  //let coconutNode = new Node('Coconuts for Coconut');
+  //vanillaNode.setNextNode(strawberryNode);
+  //strawberryNode.setNextNode(coconutNode);
+  //let currentNode = vanillaNode;
+  /*---
   while(currentNode !== null) {
     console.log(currentNode.data)
     currentNode = currentNode.next;
   }
+  ---*/
+  module.exports = Node;
 
   //In this example, the `node data structure` is constructed using the `class` syntax.
   //Each `node` is made to hold some kind of data, in this example, an ice cream flavor.
