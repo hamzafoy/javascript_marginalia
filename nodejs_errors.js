@@ -36,3 +36,12 @@ try {
 } catch (err) {
     console.log(err.message);
 }
+
+/*---
+
+A common way to handle errors is by `throw`ing errors to have them
+become exceptions which ca be caught somewhere in the stack with a
+`try/catch` block. If the error is not caught, it becomes an
+`uncaughtException` which causes the app to exit.
+
+---*/
