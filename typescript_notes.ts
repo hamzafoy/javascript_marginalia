@@ -30,6 +30,8 @@ the flags repeatedly in the command line. Generate this file easily by running
 
 :::::*/
 
+
+
 /*:::::
 
 TYPE INFERENCE
@@ -52,6 +54,8 @@ typeScriptAny = 2.4512; //A declared variable with no data type assigned is trea
 let typeScriptExplicitlyString: string;
 //You can explicitly dictate the data type that a given variable should deal with with the above syntax.
 
+
+
 /*:::::
 
 EXPLICIT TYPE ANNOTATION FOR FUNCTIONS
@@ -66,3 +70,36 @@ the return value is after a colon to the right of the parentheses.
 function typeScriptFunc(paramOne: string, paramTwo: number): string {
     return `${paramOne}: ${paramTwo}`;
 }
+
+
+
+/*:::::
+
+TYPESCRIPT CLASSES
+
+TypeScript classes support inheritance using the `extends` keyword. TypeScript also supports
+access modifiers such as `public`, `private`, & `modified` which can dictate whether code
+outside of the class can or cannot access the class' properties & methods. The default is `public`.
+`private` means a property/method can only be accessed from within the class whereas `protected` 
+allows classes that inherit the property/method can also access said property/method.
+
+:::::*/
+
+class Actor {
+    name: string;
+    age: number;
+    isFilming: boolean;
+    preferredGenre: string;
+
+    constructor(name: string, age: number, preferredGenre: string) {
+        this.name = name;
+        this.age = age;
+        this.preferredGenre = preferredGenre;
+    }
+
+    rollCall() {
+        return `This actor's name is ${this.name}, he is ${this.age} and prefers to perform in ${this.preferredGenre} movies`;
+    }
+};
+
+let bradPitt = new Actor('Brad Pitt', 28, 'action');
